@@ -16,17 +16,15 @@ export default {
 </script>
 
 
-<style>
+<style >
 * {
   margin: 0;
   padding: 0;
-  background-color: #fff8f1;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  margin: 0 3% 0 3%;
 }
 a {
   text-decoration: none;
