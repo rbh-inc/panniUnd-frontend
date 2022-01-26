@@ -66,6 +66,7 @@ export default {
 .sector-list {
   display: flex;
   margin: 0px 30px 20px 30px;
+  overflow: scroll;
 }
 
 .sector-list-card {
@@ -76,8 +77,8 @@ export default {
   background-color: white;
   border-radius: 5px;
   box-shadow: #fbf1ed;
-  height: 130px;
-  width: 130px;
+  min-height: 120px;
+  min-width: 130px;
 }
 .sector-list-card img {
   width: 60px;
