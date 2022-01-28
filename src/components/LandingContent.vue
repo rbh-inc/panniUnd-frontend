@@ -70,6 +70,6 @@ export default {
 }
 
 .main-illustration img {
-  width: 550px;
+  width: 450px;
 }
 </style>
