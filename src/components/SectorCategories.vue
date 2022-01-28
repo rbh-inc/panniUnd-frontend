@@ -50,7 +50,6 @@ export default {
 <style scoped>
 .container {
   background-color: #262c31;
-
   width: 100%;
   margin: 20px 0 15px 0;
   display: flex;
@@ -59,8 +58,9 @@ export default {
 }
 
 .sector-title {
-  margin-top: 10px;
+  margin: 3px;
   text-align: center;
+  font-family: "Noto Sans", sans-serif;
 }
 
 .sector-list {
