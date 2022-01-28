@@ -1,0 +1,87 @@
+<template>
+  <div class="card">
+    <div class="card-header">
+      <div>
+        <h4 class="card-title">Job Title</h4>
+        <p class="card-location">
+          <img
+            class="location-icon"
+            src="../assets/location-icon.png"
+            alt=""
+          />Bangalore
+        </p>
+      </div>
+      <div>
+        <p class="card-day">23</p>
+        <span class="card-month">JAN</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora,
+        maiores!
+      </p>
+    </div>
+    <div class="card-footer">
+      <p><spam>₹ </spam>500 <span>hour</span></p>
+      <a class="hire-btn" href="">HIRE</a>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "WordAdCard",
+};
+</script>
+
+
+<style scoped>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  height: 185px;
+  width: 275px;
+  margin: 10px;
+  font-family: "Work Sans", sans-serif;
+  border-top: solid 3px pink;
+}
+
+.card-header {
+  margin: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.card-body {
+  margin: 15px;
+}
+.card-footer {
+  margin: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+span {
+  font-size: 14px;
+  font-weight: bold;
+}
+.card-title {
+  font-size: 20px;
+}
+.card-location {
+  font-size: 14px;
+  margin: 5px;
+}
+
+.hire-btn {
+  color: #42b983;
+  font-weight: bold;
+}
+.location-icon {
+  width: 20px;
+  margin: -3px;
+  margin-right: 3px;
+}
+</style>
