@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div ref="card" class="card">
     <div class="card-header">
       <div>
         <h4 class="card-title">Job Title</h4>
@@ -32,6 +32,13 @@
 <script>
 export default {
   name: "WordAdCard",
+  mounted() {
+    const randomHex = () =>
+      `#${Math.floor(Math.random() * 0xffffff)
+        .toString(16)
+        .padEnd(6, "0")}`;
+    this.$refs.card.style.borderTop = `solid 4px ${randomHex()}`;
+  },
 };
 </script>
 
@@ -44,7 +51,6 @@ export default {
   width: 275px;
   margin: 10px;
   font-family: "Work Sans", sans-serif;
-  border-top: solid 3px pink;
 }
 
 .card-header {
