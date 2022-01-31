@@ -48,7 +48,7 @@ export default {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   height: 185px;
-  width: 275px;
+  width: 360px;
   margin: 10px;
   font-family: "Work Sans", sans-serif;
 }
@@ -89,5 +89,12 @@ span {
   width: 20px;
   margin: -3px;
   margin-right: 3px;
+}
+
+@media (max-width: 979px) {
+  .card {
+    width: 220px;
+    height: 200px;
+  }
 }
 </style>

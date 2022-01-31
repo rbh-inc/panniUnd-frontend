@@ -34,7 +34,7 @@ export default {
 
 <style scoped>
 #container {
-  margin: 20px 30px 0 30px;
+  margin: 20px 5% 0 5%;
 }
 .title {
   font-family: "Noto Sans", sans-serif;
@@ -45,5 +45,6 @@ export default {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
 }
 </style>
