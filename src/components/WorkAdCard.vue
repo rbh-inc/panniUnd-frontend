@@ -32,13 +32,6 @@
 <script>
 export default {
   name: "WordAdCard",
-  mounted() {
-    const randomHex = () =>
-      `#${Math.floor(Math.random() * 0xffffff)
-        .toString(16)
-        .padEnd(6, "0")}`;
-    this.$refs.card.style.borderTop = `solid 4px ${randomHex()}`;
-  },
 };
 </script>
 
@@ -51,6 +44,7 @@ export default {
   width: 360px;
   margin: 10px;
   font-family: "Work Sans", sans-serif;
+  border-top: solid 4px gold;
 }
 
 .card-header {

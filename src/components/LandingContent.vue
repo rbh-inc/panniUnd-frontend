@@ -15,8 +15,8 @@
         </p>
       </div>
       <div class="landing-btns">
-        <button><router-link to="/about">I am a worker</router-link></button>
-        <button><router-link to="/about">Find a worker</router-link></button>
+        <button><router-link to="/register">I am a worker</router-link></button>
+        <button><router-link to="/search">Find a worker</router-link></button>
       </div>
     </div>
     <div class="main-illustration">
