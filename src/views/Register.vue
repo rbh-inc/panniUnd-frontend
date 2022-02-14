@@ -1,25 +1,27 @@
 <template>
   <div class="container">
     <div class="heading">
-      <h3>submit your skill and get a work</h3>
+      <h3>Worker Form Submission</h3>
     </div>
     <div class="form">
       <form @submit.prevent="onSubmit">
-        <div class="form-top">
+        <div class="dpSection">
+          <img
+            src="https://img.icons8.com/external-linector-flat-linector/100/000000/external-avatar-man-avatar-linector-flat-linector-6.png"
+          />
+          <input
+            class="fileUpload-btn"
+            type="file"
+            id="displayPicture"
+            name="displayPicture"
+            accept="image/*"
+          />
+        </div>
+
+        <div class="gender-section">
+          <p>Sex</p>
+
           <div>
-            <img
-              src="https://img.icons8.com/external-linector-flat-linector/100/000000/external-avatar-man-avatar-linector-flat-linector-6.png"
-            />
-            <input
-              type="file"
-              id="displayPicture"
-              name="displayPicture"
-              accept="image/*"
-            />
-            <span>img submission not supported</span>
-
-            <p><sup>*</sup>Sex:</p>
-
             <input
               v-model="form.sex"
               type="radio"
@@ -47,30 +49,34 @@
             />
             <label for="other"> Other</label>
           </div>
-
-          <div>
-            <label for="name"><sup>*</sup> Name: </label>
-            <input
-              v-model="form.name"
-              type="text"
-              id="name"
-              name="name"
-              placeholder="John"
-            /><br />
-
-            <label for="description"><sup>*</sup> Description: </label>
-            <textarea
-              v-model="form.description"
-              type="text"
-              id="description"
-              name="description"
-              placeholder="describe your past jobs and work experiences"
-            ></textarea>
-          </div>
         </div>
 
-        <div class="form-mid">
-          <label for="phoneNo"><sup>*</sup> Phone No: </label>
+        <div class="label-input">
+          <label class="label-text" for="name"> Name </label>
+          <input
+            class="input-text"
+            v-model="form.name"
+            type="text"
+            id="name"
+            name="name"
+            placeholder="John"
+          />
+        </div>
+
+        <div class="label-input">
+          <label class="label-text" for="description"> Description </label>
+          <textarea
+            class="input-text"
+            v-model="form.description"
+            type="text"
+            id="description"
+            name="description"
+            placeholder="describe your past jobs and work experiences"
+          ></textarea>
+        </div>
+
+        <div class="label-input">
+          <label for="phoneNo"> Phone No </label>
           <input
             v-model="form.phoneNo"
             type="number"
@@ -78,74 +84,87 @@
             name="phoneNo"
             placeholder=""
             min="0"
-          /><br />
+          />
+        </div>
 
-          <label for="adharNo"><sup>*</sup> Adhar No: </label>
+        <div class="label-input">
+          <label for="adharNo"> Adhar No </label>
           <input
             v-model="form.adharNo"
             type="number"
             id="adharNo"
             name="adharNo"
             placeholder=""
-          /><br />
+          />
+        </div>
 
-          <label for="sector"><sup>*</sup> Sector: </label>
+        <div class="label-input">
+          <label for="sector"> Sector </label>
           <input
             v-model="form.sector"
             type="text"
             id="sector"
             name="sector"
             placeholder=""
-          /><br />
+          />
+        </div>
 
-          <label for="subSector"><sup>*</sup> Sub Sector: </label>
+        <div class="label-input">
+          <label for="subSector"> Sub Sector </label>
           <input
             v-model="form.subSector"
             type="text"
             id="subSector"
             name="subSector"
             placeholder=""
-          /><br />
+          />
+        </div>
 
-          <label for="skill">Skill : </label>
+        <div class="label-input">
+          <label for="skill">Skill </label>
           <input
             v-model="form.skill"
             type="text"
             id="skill"
             name="skill"
             placeholder="optional"
-          /><br />
+          />
         </div>
 
-        <div class="form-end">
-          <label for="hourlyRate"><sup>*</sup> Hourly rate: </label>
+        <div class="label-input">
+          <label for="hourlyRate"> Hourly Rate </label>
           <input
             v-model="form.hourlyRate"
             type="number"
             id="hourlyRate"
             name="hourlyRate"
             placeholder=""
-          /><br />
+          />
+        </div>
 
-          <label for="place"><sup>*</sup> Place: </label>
+        <div class="label-input">
+          <label for="place"> Place </label>
           <input
             v-model="form.place"
             type="text"
             id="place"
             name="place"
             placeholder=""
-          /><br />
+          />
+        </div>
 
-          <label for="district"><sup>*</sup> State: </label>
+        <div class="label-input">
+          <label for="district"> State </label>
           <input
             v-model="form.state"
             type="text"
             id="state"
             name="state"
             placeholder=""
-          /><br />
+          />
         </div>
-        <button>Submit</button>
+
+        <button class="submit-btn">Submit</button>
       </form>
     </div>
   </div>
@@ -202,5 +221,114 @@ export default {
 <style scoped>
 .container {
   margin: 2% 4%;
+}
+.heading {
+  text-align: center;
+  font-size: 20px;
+}
+
+.form {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  max-width: 700px;
+  margin: 20%;
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.dpSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.dpSection img {
+  width: 200px;
+  border-radius: 100px;
+}
+.fileUpload-btn {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 10px;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.gender-section {
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.gender-section input {
+  margin-left: 40px;
+}
+
+.label-input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+}
+.label-input input {
+  width: 75%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 15px;
+}
+.label-input textarea {
+  width: 75%;
+  height: 120px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 15px;
+  resize: none;
+}
+.label-input label {
+  margin-right: 15px;
+}
+
+.submit-btn {
+  border: none;
+  margin: 10px;
+  padding: 10px 22px;
+  font-weight: bold;
+  font-size: 20px;
+  background-color: #42b983;
+  color: white;
+}
+
+/* remove number input=type=number couting arrows Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+@media only screen and (max-width: 1000px) {
+  /*Small smartphones [325px -> 425px]*/
+  .form {
+    margin: 10%;
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 550px) {
+  /*Small smartphones [325px -> 425px]*/
+  .form {
+    margin: 2%;
+    font-size: 18px;
+  }
 }
 </style>
