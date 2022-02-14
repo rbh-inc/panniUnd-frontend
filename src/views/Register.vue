@@ -7,7 +7,7 @@
       <form @submit.prevent="onSubmit">
         <div class="dpSection">
           <img
-            src="https://img.icons8.com/external-linector-flat-linector/100/000000/external-avatar-man-avatar-linector-flat-linector-6.png"
+            src="https://cdn-icons.flaticon.com/png/512/1785/premium/1785888.png?token=exp=1644864608~hmac=4ebb8106116c9f3d6e718ac61c61e558"
           />
           <input
             class="fileUpload-btn"
@@ -231,7 +231,7 @@ export default {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   max-width: 700px;
-  margin: 20%;
+  margin: 4% 20%;
   margin-top: 20px;
   font-size: 20px;
 }
@@ -320,14 +320,14 @@ input[type="number"] {
 @media only screen and (max-width: 1000px) {
   /*Small smartphones [325px -> 425px]*/
   .form {
-    margin: 10%;
+    margin: 1% 10%;
     font-size: 20px;
   }
 }
 @media only screen and (max-width: 550px) {
   /*Small smartphones [325px -> 425px]*/
   .form {
-    margin: 2%;
+    margin: 0 2%;
     font-size: 18px;
   }
 }
