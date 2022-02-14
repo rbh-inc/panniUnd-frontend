@@ -188,6 +188,7 @@ export default {
             alert("fill all the forms correctly");
           } else {
             console.log(success);
+            alert("submission succuss");
           }
         })
         .catch((e) => {
