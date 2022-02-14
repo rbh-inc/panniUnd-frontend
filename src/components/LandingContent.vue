@@ -8,11 +8,7 @@
         </h2>
       </div>
       <div class="landing-description">
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus,
-          expedita necessitatibus. Accusamus vitae quis ex cum obcaecati sed
-          soluta labore autem.
-        </p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus,</p>
       </div>
       <div class="landing-btns">
         <button><router-link to="/register">I am a worker</router-link></button>
@@ -64,6 +60,7 @@ export default {
   margin: 20px 20px 0px 20px;
   padding: 10px 20px 10px 20px;
   font-weight: bold;
+  font-size: 30px;
   background-color: #d97356;
   border: solid 1px #ae5c45;
   color: white;
