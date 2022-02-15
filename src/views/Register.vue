@@ -6,9 +6,7 @@
     <div class="form">
       <form @submit.prevent="onSubmit">
         <div class="dpSection">
-          <img
-            src="https://cdn-icons.flaticon.com/png/512/1785/premium/1785888.png?token=exp=1644864608~hmac=4ebb8106116c9f3d6e718ac61c61e558"
-          />
+          <img src="../assets/avathar-icon.png" />
           <input
             class="fileUpload-btn"
             type="file"
