@@ -2,13 +2,13 @@
   <div ref="card" class="card">
     <div class="card-header">
       <div>
-        <h4 class="card-title">Job Title</h4>
+        <h4 class="card-title">{{ name ? name : "Some Title" }}</h4>
         <p class="card-location">
           <img
             class="location-icon"
             src="../assets/location-icon.png"
             alt=""
-          />Bangalore
+          />{{ place ? place : "Place" }} &bull; {{ state ? state : "State" }}
         </p>
       </div>
       <div>
@@ -18,12 +18,17 @@
     </div>
     <div class="card-body">
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora,
-        maiores!
+        {{
+          description
+            ? description
+            : "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        }}
       </p>
     </div>
     <div class="card-footer">
-      <p><spam>₹ </spam>500 <span>hour</span></p>
+      <p>
+        <spam>₹ </spam>{{ hourlyRate ? hourlyRate : 250 }} <span>hour</span>
+      </p>
       <a class="hire-btn" href="">HIRE</a>
     </div>
   </div>
@@ -32,6 +37,7 @@
 <script>
 export default {
   name: "WordAdCard",
+  props: ["name", "place", "description", "hourlyRate", "state"],
 };
 </script>
 
@@ -87,7 +93,13 @@ span {
 
 @media (max-width: 979px) {
   .card {
-    width: 220px;
+    width: 250px;
+    height: 200px;
+  }
+}
+@media (max-width: 600px) {
+  .card {
+    width: 350px;
     height: 200px;
   }
 }
