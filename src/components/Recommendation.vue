@@ -13,11 +13,6 @@
       <WorkAdCard></WorkAdCard>
       <WorkAdCard></WorkAdCard>
       <WorkAdCard></WorkAdCard>
-      <WorkAdCard></WorkAdCard>
-      <WorkAdCard></WorkAdCard>
-      <WorkAdCard></WorkAdCard>
-      <WorkAdCard></WorkAdCard>
-      <WorkAdCard></WorkAdCard>
     </div>
   </div>
 </template>
