@@ -3,32 +3,38 @@
     <div class="search-filters">
       <h3 class="search-heading">Search and Filter</h3>
 
-      <input type="text" placeholder="Location" />
-      <input id="hourlyRate" type="number" max="1000" placeholder="Rate ₹" />
+      <input v-model="location" type="text" placeholder="Location" />
+      <input id="hourlyRate" type="number" max="1000" placeholder="₹ Max" />
 
-      <label for="dog-names">Sector: </label>
-      <select class="select-dropdown" name="dog-names" id="dog-names">
-        <option value="rigatoni">Any</option>
-        <option value="dave">Dave</option>
-        <option value="pumpernickel">Pumpernickel</option>
-        <option value="reeses">Reeses</option>
+      <label>Sector: </label>
+      <select v-model="sector" class="select-dropdown">
+        <option
+          v-for="(sector, indxSector) in chooseSectors"
+          :key="indxSector"
+          :value="sector"
+        >
+          {{ sector }}
+        </option>
       </select>
 
-      <label for="dog-names">Sub-Sector: </label>
-      <select class="select-dropdown" name="dog-names" id="dog-names">
-        <option value="rigatoni">Any</option>
-        <option value="dave">Dave</option>
-        <option value="pumpernickel">Pumpernickel</option>
-        <option value="reeses">Reeses</option>
+      <label>SubSector: </label>
+      <select v-model="subSector" class="select-dropdown">
+        <option
+          v-for="(subSector, indxSubSector) in chooseSubSectors"
+          :key="indxSubSector"
+          :value="subSector"
+        >
+          {{ subSector }}
+        </option>
       </select>
 
-      <label for="dog-names">Sex: </label>
-      <select class="select-dropdown" name="dog-names" id="dog-names">
-        <option value="rigatoni">Any</option>
-        <option value="dave">Male</option>
-        <option value="pumpernickel">Female</option>
+      <label>Sex: </label>
+      <select v-model="sex" class="select-dropdown">
+        <option value="All">All</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
       </select>
-      <button class="submit-btn">Search</button>
+      <button @click="submitBtn()" class="submit-btn">Search</button>
     </div>
     <div class="workerCards-section">
       <WorkAdCard
@@ -56,6 +62,31 @@ export default {
   data() {
     return {
       workers: [],
+      chooseSectors: [
+        "All",
+        "archivist",
+        "art director",
+        "art teacher",
+        "artist",
+        "assembler",
+        "astronomer",
+        "athlete",
+      ],
+      chooseSubSectors: [
+        "All",
+        "elevator installer",
+        "elevator repairer",
+        "embalmer",
+        "engine assembler",
+        "engineer",
+        "engineering manager",
+        "engineering teacher",
+      ],
+      location: "",
+      rate: 0,
+      sector: "All",
+      subSector: "All",
+      sex: "All",
     };
   },
   created() {
@@ -72,7 +103,17 @@ export default {
       })
       .catch((error) => console.warn(error));
   },
-  methods: {},
+  methods: {
+    submitBtn() {
+      console.log({
+        location: this.location,
+        sector: this.sector,
+        subSector: this.subSector,
+        rate: this.rate,
+        sex: this.sex,
+      });
+    },
+  },
 };
 </script>
 
@@ -95,6 +136,7 @@ export default {
 .select-dropdown {
   border: 1px solid #ccc;
   border-radius: 4px;
+  min-width: 130px;
   margin: 4px;
   padding: 5px;
   background-color: #fff;
