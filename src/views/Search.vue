@@ -4,7 +4,7 @@
       <h3 class="search-heading">Search and Filter</h3>
 
       <input v-model="location" type="text" placeholder="Location" />
-      <input id="hourlyRate" type="number" max="1000" placeholder="₹ Max" />
+      <input id="hourlyRate" type="number" v-model="rate" placeholder="₹ Max" />
 
       <label>Sector: </label>
       <select v-model="sector" class="select-dropdown">
@@ -63,7 +63,6 @@ export default {
     return {
       workers: [],
       chooseSectors: [
-        "All",
         "archivist",
         "art director",
         "art teacher",
@@ -73,7 +72,6 @@ export default {
         "athlete",
       ],
       chooseSubSectors: [
-        "All",
         "elevator installer",
         "elevator repairer",
         "embalmer",
@@ -83,10 +81,10 @@ export default {
         "engineering teacher",
       ],
       location: "",
-      rate: 0,
-      sector: "All",
-      subSector: "All",
-      sex: "All",
+      rate: "",
+      sector: "",
+      subSector: "",
+      sex: "",
     };
   },
   created() {
@@ -105,13 +103,15 @@ export default {
   },
   methods: {
     submitBtn() {
-      console.log({
-        location: this.location,
-        sector: this.sector,
-        subSector: this.subSector,
-        rate: this.rate,
-        sex: this.sex,
+      const queryString = new URLSearchParams({
+        location: this.location.trim(),
+        rate: this.rate.trim(),
+        sector: this.sector.trim(),
+        subSector: this.subSector.trim(),
+        sex: this.sex.trim(),
       });
+
+      console.log(queryString.toString());
     },
   },
 };
