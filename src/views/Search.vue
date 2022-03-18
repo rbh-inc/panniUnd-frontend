@@ -30,9 +30,8 @@
 
       <label>Sex: </label>
       <select v-model="sex" class="select-dropdown">
-        <option value="All">All</option>
-        <option value="Male">Male</option>
-        <option value="Female">Female</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
       </select>
       <button @click="submitBtn()" class="submit-btn">Search</button>
     </div>
@@ -105,13 +104,29 @@ export default {
     submitBtn() {
       const queryString = new URLSearchParams({
         location: this.location.trim(),
-        rate: this.rate.trim(),
+        rate: this.rate,
         sector: this.sector.trim(),
         subSector: this.subSector.trim(),
         sex: this.sex.trim(),
       });
 
-      console.log(queryString.toString());
+      let url = "http://panniapp.herokuapp.com/query?" + queryString.toString();
+      // console.log(url);
+      this.apiCaller(url);
+    },
+    apiCaller(url) {
+      fetch(url, {
+        method: "GET",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      })
+        .then((response) => response.json())
+        .then((responseData) => {
+          return (this.workers = responseData);
+        })
+        .catch((error) => console.warn(error));
     },
   },
 };
