@@ -110,7 +110,8 @@ export default {
         sex: this.sex.trim(),
       });
 
-      let url = "http://panniapp.herokuapp.com/query?" + queryString.toString();
+      let url =
+        "https://panniapp.herokuapp.com/query?" + queryString.toString();
       // console.log(url);
       this.apiCaller(url);
     },
