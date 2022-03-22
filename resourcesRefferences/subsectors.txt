@@ -1,0 +1,70 @@
+
+   "Cutting master",
+   "Button operator",
+   "Trimming staff",
+   "Finishing Helper",
+   "Machine Mechanic", 
+   "Qc checker",
+   "Button hole operator",
+   "Iron machine operators",
+   "Tailor",
+   "Helper",
+
+
+
+  "Chef",
+  "Waiter",
+  "Receptionist", 
+  "Sous chef",
+  "Commi chef",
+  "Indian chef",
+  "Chinese chef",
+  "Arabic chef", 
+  "Continental chef", 
+
+
+   "Nurse",
+   "Physiotherapist", 
+   "Nutritionist", 
+   "Psychiatrist", 
+   "Optometrist", 
+   "Pharmacist", 
+   "Doctor", 
+
+   "Lab technician", 
+   "OT assistant",
+   "Ambulance driver", 
+   "Home nurse",
+
+
+   "Subject experts",
+   "Lab assistant", 
+   "Trainer",
+   "Mentor",
+   "Professor",
+
+
+   "Computer technician", 
+   "Mobile technician", 
+   "Software developer", 
+   "Graphic designer", 
+ 
+ 
+  "Electrician", 
+  "Plumber", 
+  "Carpenter",
+  "Mason",
+  "Gardener",
+  "Home maid", 
+  "Painter",
+  "Flooring", 
+  
+
+
+  "Car mechanic", 
+  "Puncture repair", 
+  "Car painting", 
+  "Car denting", work
+  "Car wash", 
+  "Detailing ",
+  "Ceramic coating",
