@@ -98,24 +98,28 @@
 
         <div class="label-input">
           <label for="sector"> Sector </label>
-          <input
-            v-model="form.sector"
-            type="text"
-            id="sector"
-            name="sector"
-            placeholder=""
-          />
+          <select v-model="form.sector" class="select-dropdown">
+            <option
+              v-for="(sector, indxSector) in chooseSectors"
+              :key="indxSector"
+              :value="sector"
+            >
+              {{ sector }}
+            </option>
+          </select>
         </div>
 
         <div class="label-input">
           <label for="subSector"> Sub Sector </label>
-          <input
-            v-model="form.subSector"
-            type="text"
-            id="subSector"
-            name="subSector"
-            placeholder=""
-          />
+          <select v-model="form.subSector" class="select-dropdown">
+            <option
+              v-for="(subSector, indxSubSector) in chooseSubSectors"
+              :key="indxSubSector"
+              :value="subSector"
+            >
+              {{ subSector }}
+            </option>
+          </select>
         </div>
 
         <div class="label-input">
@@ -163,6 +167,9 @@
         </div>
 
         <button class="submit-btn">Submit</button>
+        <span id="feedback-text"
+          ><i>{{ feedback }}</i></span
+        >
       </form>
     </div>
   </div>
@@ -173,6 +180,7 @@ export default {
   name: "Register",
   data() {
     return {
+      feedback: "",
       form: {
         name: "",
         description: "",
@@ -187,11 +195,69 @@ export default {
         place: "",
         state: "",
       },
+      chooseSectors: [
+        "Textile and apparels",
+        "Food and dining",
+        "Healthcare and wellness ",
+        "Education",
+        "Computer and mobile",
+        "Home care service",
+        "Automobile",
+      ],
+      chooseSubSectors: [
+        "Cutting master",
+        "Button operator",
+        "Trimming staff",
+        "Finishing Helper",
+        "Machine Mechanic",
+        "Qc checker",
+        "Button hole operator",
+        "Iron machine operators",
+        "Tailor",
+        "Helper",
+        "Chef",
+        "Waiter",
+        "Receptionist",
+        "Sous chef",
+        "Commi chef",
+        "Indian chef",
+        "Chinese chef",
+        "Arabic chef",
+        "Continental chef",
+        "Nurse",
+        "Physiotherapist",
+        "Nutritionist",
+        "Psychiatrist",
+        "Optometrist",
+        "Pharmacist",
+        "Doctor",
+        "Lab technician",
+        "OT assistant",
+        "Ambulance driver",
+        "Home nurse",
+        "Subject experts",
+        "Lab assistant",
+        "Trainer",
+        "Mentor",
+        "Professor",
+        "Computer technician",
+        "Mobile technician",
+        "Software developer",
+        "Graphic designer",
+        "Electrician",
+        "Plumber",
+        "Carpenter",
+        "Mason",
+        "Gardener",
+        "Home maid",
+        "Painter",
+        "Flooring",
+      ],
     };
   },
   methods: {
     onSubmit() {
-      console.log("submited");
+      this.feedback = "saving user info.";
       fetch(`https://panniapp.herokuapp.com/registerWorker`, {
         method: "POST", //This could be any http method
         headers: {
@@ -202,10 +268,13 @@ export default {
         .then((response) => response.json())
         .then((success) => {
           if (success.statusCode) {
-            alert("fill all the forms correctly");
+            // alert("fill all the forms correctly");
+            this.feedback = "fill all the data correctly.";
           } else {
             console.log(success);
-            alert("submission succuss");
+            this.feedback = "successfully saved.";
+
+            // alert("worker data saved.");
           }
         })
         .catch((e) => {
@@ -303,6 +372,21 @@ export default {
   background-color: #42b983;
   color: white;
 }
+.select-dropdown {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 75%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  background-color: #fff;
+  font-size: 15px;
+}
+
+#feedback-text {
+  color: #f05454;
+  font-weight: 800;
+  margin-left: 10px;
+}
 
 /* remove number input=type=number couting arrows Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
@@ -313,6 +397,21 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type="number"] {
   -moz-appearance: textfield;
+}
+
+/* down arrow in selection sector and subsector */
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+select {
+  -moz-appearance: none; /* Firefox */
+  -webkit-appearance: none; /* Safari and Chrome */
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-position-y: 3px;
 }
 
 @media only screen and (max-width: 1000px) {

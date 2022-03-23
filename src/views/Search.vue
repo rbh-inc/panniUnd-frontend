@@ -231,6 +231,9 @@ input {
   background-color: #42b983;
   color: white;
 }
+
+/* down arrow in selection sector and subsector */
+
 /* Firefox */
 input[type="number"] {
   -moz-appearance: textfield;
