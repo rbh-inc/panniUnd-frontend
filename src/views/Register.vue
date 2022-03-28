@@ -100,8 +100,8 @@
           <label for="sector"> Sector </label>
           <select v-model="form.sector" class="select-dropdown">
             <option
-              v-for="(sector, indxSector) in chooseSectors"
-              :key="indxSector"
+              v-for="(value, sector, index) in sectorsSubSectors"
+              :key="index"
               :value="sector"
             >
               {{ sector }}
@@ -113,8 +113,8 @@
           <label for="subSector"> Sub Sector </label>
           <select v-model="form.subSector" class="select-dropdown">
             <option
-              v-for="(subSector, indxSubSector) in chooseSubSectors"
-              :key="indxSubSector"
+              v-for="(subSector, index) in sectorsSubSectors[form.sector]"
+              :key="index"
               :value="subSector"
             >
               {{ subSector }}
@@ -195,64 +195,76 @@ export default {
         place: "",
         state: "",
       },
-      chooseSectors: [
-        "Textile and apparels",
-        "Food and dining",
-        "Healthcare and wellness ",
-        "Education",
-        "Computer and mobile",
-        "Home care service",
-        "Automobile",
-      ],
-      chooseSubSectors: [
-        "Cutting master",
-        "Button operator",
-        "Trimming staff",
-        "Finishing Helper",
-        "Machine Mechanic",
-        "Qc checker",
-        "Button hole operator",
-        "Iron machine operators",
-        "Tailor",
-        "Helper",
-        "Chef",
-        "Waiter",
-        "Receptionist",
-        "Sous chef",
-        "Commi chef",
-        "Indian chef",
-        "Chinese chef",
-        "Arabic chef",
-        "Continental chef",
-        "Nurse",
-        "Physiotherapist",
-        "Nutritionist",
-        "Psychiatrist",
-        "Optometrist",
-        "Pharmacist",
-        "Doctor",
-        "Lab technician",
-        "OT assistant",
-        "Ambulance driver",
-        "Home nurse",
-        "Subject experts",
-        "Lab assistant",
-        "Trainer",
-        "Mentor",
-        "Professor",
-        "Computer technician",
-        "Mobile technician",
-        "Software developer",
-        "Graphic designer",
-        "Electrician",
-        "Plumber",
-        "Carpenter",
-        "Mason",
-        "Gardener",
-        "Home maid",
-        "Painter",
-        "Flooring",
-      ],
+      sectorsSubSectors: {
+        "Textile and Apparels": [
+          "Cutting Master",
+          "Button operator",
+          "Trimming staff",
+          "Finishing Helper",
+          "Machine Mechanic",
+          "Qc checker",
+          "Button hole operator",
+          "Iron machine operators",
+          "Tailor",
+          "Helper",
+        ],
+        "Food and Dining": [
+          "Chef",
+          "Waiter",
+          "Receptionist",
+          "Sous chef",
+          "Commi chef",
+          "Indian chef",
+          "Chinese chef",
+          "Arabic chef",
+          "Continental chef",
+        ],
+        "Healthcare and Wellness": [
+          "Nurse",
+          "Physiotherapist",
+          "Nutritionist",
+          "Psychiatrist",
+          "Optometrist",
+          "Pharmacist",
+          "Doctor",
+          "Lab technician",
+          "OT assistant",
+          "Ambulance driver",
+          "Home nurse",
+        ],
+        Education: [
+          "Subject experts",
+          "Lab assistant",
+          "Trainer",
+          "Mentor",
+          "Professor",
+        ],
+        "Computer and Mobile": [
+          "Computer technician",
+          "Mobile technician",
+          "Software developer",
+          "Graphic designer",
+        ],
+        "Home care Service": [
+          "Electrician",
+          "Plumber",
+          "Carpenter",
+          "Mason",
+          "Gardener",
+          "Home maid",
+          "Painter",
+          "Flooring",
+        ],
+        Automobile: [
+          "Car mechanic",
+          "Puncture repair",
+          "Car painting",
+          "Car denting work",
+          "Car wash",
+          "Detailing ",
+          "Ceramic coating",
+        ],
+      },
     };
   },
   methods: {
