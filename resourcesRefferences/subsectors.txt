@@ -1,5 +1,5 @@
-
-   "Cutting master",
+{Textile and apparels:
+   ["Cutting master",
    "Button operator",
    "Trimming staff",
    "Finishing Helper",
@@ -8,11 +8,10 @@
    "Button hole operator",
    "Iron machine operators",
    "Tailor",
-   "Helper",
+   "Helper"],
 
-
-
-  "Chef",
+Food and dining:
+[  "Chef",
   "Waiter",
   "Receptionist", 
   "Sous chef",
@@ -20,51 +19,49 @@
   "Indian chef",
   "Chinese chef",
   "Arabic chef", 
-  "Continental chef", 
+  "Continental chef"
+],
 
-
-   "Nurse",
+Healthcare and wellness: 
+ [  "Nurse",
    "Physiotherapist", 
    "Nutritionist", 
    "Psychiatrist", 
    "Optometrist", 
    "Pharmacist", 
-   "Doctor", 
-
+   "Doctor" 
    "Lab technician", 
    "OT assistant",
    "Ambulance driver", 
-   "Home nurse",
+   "Home nurse"],
 
-
-   "Subject experts",
+Education: 
+   ["Subject experts",
    "Lab assistant", 
    "Trainer",
    "Mentor",
-   "Professor",
+   "Professor"],
 
-
-   "Computer technician", 
+ Computer and mobile:
+ [ "Computer technician", 
    "Mobile technician", 
    "Software developer", 
-   "Graphic designer", 
+   "Graphic designer"],
  
- 
-  "Electrician", 
+ Home care service:["Electrician", 
   "Plumber", 
   "Carpenter",
   "Mason",
   "Gardener",
   "Home maid", 
   "Painter",
-  "Flooring", 
+  "Flooring"],
   
-
-
-  "Car mechanic", 
+Automobile :[  "Car mechanic", 
   "Puncture repair", 
   "Car painting", 
-  "Car denting", work
+  "Car denting work",
   "Car wash", 
   "Detailing ",
-  "Ceramic coating",
+  "Ceramic coating"]
+  }
